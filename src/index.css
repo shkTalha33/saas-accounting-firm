@@ -1,0 +1,20 @@
+@import url('./components/styles/fontFamily.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    font-family: 'manrope_regular';
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

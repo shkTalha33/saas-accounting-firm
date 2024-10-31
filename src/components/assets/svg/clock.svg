@@ -1,0 +1,8 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Page-1">
+<g id="Clock">
+<path id="Oval" d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" stroke="#060606" stroke-width="1.5" stroke-linecap="round"/>
+<path id="Path" d="M12 16H15.3333C15.7015 16 16 15.7015 16 15.3333V9.33333" stroke="#060606" stroke-width="1.5" stroke-linecap="round"/>
+</g>
+</g>
+</svg>

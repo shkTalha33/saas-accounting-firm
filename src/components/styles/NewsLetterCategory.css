@@ -1,0 +1,14 @@
+/* NewsLetterCategory.css */
+.rounded-container {
+    fill: #F8F8F8;
+    background-color: #EBEBEB;
+    stroke-width: 1px;
+    stroke: #EBEBEB;
+    position: relative;
+    overflow: hidden;
+}
+
+.curved-image {
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+    height: auto;
+}

@@ -1,0 +1,122 @@
+.items_swiper .swiper{
+    padding-top: 3rem !important;
+    padding-bottom: 5rem !important;
+}
+
+.items_swiper .swiper-button-next {
+    bottom: 0!important;
+    top: auto!important;
+    width: 2rem;
+    height: 2rem;
+    right: 0 !important;
+}
+ 
+.items_swiper .swiper-button-prev {
+    bottom: 0!important;
+    top: auto!important;
+    width: 2rem;
+    left: auto;
+    right: 3.2rem;
+    height: 2rem;
+}
+
+.items_swiper .swiper-button-next::after{
+    content: '' !important;
+    background-image: url('../assets/svg/rightarrow.svg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.items_swiper .swiper-button-prev::after{
+    content: '' !important;
+    background-image: url('../assets/svg/leftarrow.svg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+/* home swiper */
+
+.home_swiper .swiper{
+    padding: 0px !important;
+}
+
+.home_swiper .swiper-pagination{
+    text-align: center !important;
+}
+.home_swiper .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+    margin: 0 5px;
+}
+
+.home_swiper .swiper-button-next {
+    width: 1.5rem;
+    height: 1.5rem;
+    right: 10px;
+    top: 60% !important;
+    bottom: auto !important;
+      transition: transform 0.5s ease; 
+}
+ 
+.home_swiper .swiper-button-prev {
+    width: 1.5rem;
+    left: 10px;
+    height: 1.5rem;
+    top: 60% !important;
+    bottom: auto !important;
+   transition: transform 0.5s ease; 
+}
+
+.home_swiper .swiper-button-next,
+.home_swiper .swiper-button-prev {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.5s ease;
+}
+
+/* Show the buttons when hovering over the swiper container */
+.home_swiper:hover .swiper-button-next,
+.home_swiper:hover .swiper-button-prev {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.home_swiper .swiper-button-next {
+    right: 10px; 
+}
+
+.home_swiper .swiper-button-prev {
+    left: 10px; 
+}
+.home_swiper:hover .swiper-button-next {
+    transform: translateX(-10px)
+}
+
+.home_swiper:hover .swiper-button-prev {
+    transform: translateX(10px); 
+}
+
+.home_swiper .swiper-button-next::after{
+    content: '' !important;
+    background-image: url('../assets/png/chevron-right.png');
+    background-size: cover;
+    background-color: #fff !important;
+    width: 100%;
+    border-radius: 50% !important;
+    height: 100%;
+    display: inline-block;
+}
+
+.home_swiper .swiper-button-prev::after{
+    content: '' !important;
+    background-image: url('../assets/png/chevron-left.png');
+    background-size: cover;
+    background-color: #fff !important;
+    width: 100%;
+    border-radius: 50% !important;
+    height: 100%;
+    display: inline-block;
+}
