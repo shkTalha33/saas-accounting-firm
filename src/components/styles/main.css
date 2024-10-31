@@ -662,6 +662,12 @@
 }
 .sub_grid_dashboard2:hover {
   background-color: #f4f4f4;
+ 
+}
+
+.sub_grid_dashboard {
+  box-shadow: 0px 3.09px 3.09px 0px #0000000D !important;
+   
 }
 
 .css-ak8x0a {
