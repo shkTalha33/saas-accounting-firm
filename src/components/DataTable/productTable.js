@@ -28,7 +28,6 @@ import {
 } from "../icons/icon";
 import { MdSearch } from "react-icons/md";
 import { CircularProgress } from "@mui/material";
-import CustomButton from "../dashboard/CustomButton";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import { Button } from "antd";
 
