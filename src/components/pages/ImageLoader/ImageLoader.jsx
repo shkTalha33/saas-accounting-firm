@@ -10,7 +10,9 @@ const ImageLoader = ({ imageUrl, classes, circeltrue = false, onClick }) => {
     const img = new Image();
     img.src = imageUrl;
     img.onload = () => setLoading(false);
+    console.log(img.src)
   }, [imageUrl]);
+
 
   return (
     <div className={classes}>

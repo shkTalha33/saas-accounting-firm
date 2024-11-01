@@ -9,6 +9,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@headlessui/react": "^1.7.17",
+    "@hookform/resolvers": "^3.9.1",
     "@mui/material": "^5.15.0",
     "@reduxjs/toolkit": "^2.0.1",
     "@testing-library/jest-dom": "^5.17.0",
@@ -38,6 +39,7 @@
     "react-feather": "^2.0.10",
     "react-google-autocomplete": "^2.7.3",
     "react-google-places-autocomplete": "^4.0.1",
+    "react-hook-form": "^7.53.1",
     "react-i18next": "^13.5.0",
     "react-icons": "^4.12.0",
     "react-image-file-resizer": "^0.4.8",
@@ -58,14 +60,15 @@
     "sass": "^1.69.5",
     "styled-components": "^6.1.6",
     "swiper": "^9.3.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-"preview": "serve -s build -l 8000"
+    "preview": "serve -s build -l 8000"
   },
   "eslintConfig": {
     "extends": [

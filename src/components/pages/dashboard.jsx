@@ -44,7 +44,7 @@ const Dashboard = () => {
   return (
     <main className="min-h-screen lg:container p-4 mx-auto">
       <div
-        className="gridDashboard w-100 px-3 py-4 mt-4 bg_white rounded-lg"
+        className="gridDashboard w-100 px-3 py-4  mt-4 bg_white rounded-lg"
         style={{ boxShadow: "0px 3.09px 15.44px 0px #EEEEEE80" }}
       >
         <Hero value={45} category={"Total Firms"} />

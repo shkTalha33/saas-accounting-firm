@@ -176,6 +176,7 @@ const Customers = () => {
         ) : (
           <ProductTable
             count={count}
+            
             loading={loading}
             setCurrentPage={setLastId2}
             currentPage={lastId2}

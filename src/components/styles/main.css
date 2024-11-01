@@ -331,6 +331,10 @@
   background-color: transparent !important;
 }
 
+.css-z5rm24{
+  background-color: transparent !important;
+}
+
 .css-1tqrhto > .ps-menu-button:hover {
   background-color: transparent !important;
 }
@@ -397,11 +401,11 @@
 /* datatable pagination */
 
 .pagination .page-item {
-  width: 32px !important;
-  height: 32px !important;
-  display: flex;
+  /* width: 32px !important; */
+  /* height: 32px !important; */
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   border-radius: 8px !important;
 }
 
@@ -410,9 +414,9 @@
 }
 
 .pagination .page-item a {
-  font-family: "plusJakara_semibold";
-  border: transparent;
-  background-color: transparent;
+  font-family: "inter_regular";
+  border: red;
+  background-color: red;
   color: #111827;
 }
 
@@ -424,13 +428,14 @@
 
 .pagination .prev-item {
   margin-right: 20px;
-  border: 1px solid gainsboro;
+  font-family: "inter_bold";
+  /* border: 1px solid gainsboro; */
 }
 
-.page-item.prev-item.disabled {
+/* .page-item.prev-item.disabled {
   border: 1px solid gainsboro;
   background-color: gainsboro !important;
-}
+} */
 
 .page-item.next-item.disabled {
   border: 1px solid gainsboro;
@@ -443,8 +448,9 @@
 }
 
 .pagination .next-item {
-  margin-left: 20px;
-  border: 1px solid gainsboro;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .page-item .next-item .disabled {
@@ -675,9 +681,9 @@
 }
 
 .ftzeFU {
-  font-family: "plusJakara_semibold" !important;
-  color: var(--secondary) !important;
-  font-size: 14px !important;
+  font-family: "inter_regular" !important;
+  color: #A8A8BD !important;
+  font-size: 13px !important;
 }
 
 .lmTzXr {
@@ -894,3 +900,41 @@
   width: 90% !important;
   margin: auto;
 }
+.dashboard-submenu-items{
+  width: 90% !important;
+  margin: auto
+}
+
+.img-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 10px;
+  font-family: "poppins_regular";
+  height: 100px;
+  background-color: #F8F8FD;
+  border-radius: 10px;
+  object-fit: contain !important;
+  padding: 5px;
+}
+
+  
+.add-firm input:focus, 
+.add-firm select:focus, 
+.add-firm textarea:focus {
+  border-color: #dee2e6;
+  outline: none;
+  box-shadow: none;
+}
+
+
+
+/* Decrease font size of the placeholder text */
+.add-firm input::placeholder, 
+textarea::placeholder {
+  font-size: 12px; /* Adjust to your preferred size */
+  color: #888; /* Optional: change the color for better visibility */
+}
+
+

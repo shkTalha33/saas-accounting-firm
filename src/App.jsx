@@ -24,6 +24,9 @@ import Contract from "./components/pages/contract";
 import ContractDetail from "./components/pages/contractDetail";
 import OrderDetail from "./components/pages/orderDetail";
 import ServiceDetail from "./components/pages/serviceDetail";
+import AllCompanies from "./components/pages/allCompanies";
+import AddFirm from "./components/pages/addFirm";
+// import CompaniesFirm from "./components/pages/CompanyFirms";
 const NavHeader = lazy(() => import('./components/header/navHeader'));
 const SidebarMenu = lazy(() => import('./components/pages/sidebar'));
 const LoginPage1 = lazy(() => import('./components/auth/login'));
@@ -92,6 +95,8 @@ function App() {
               <Route path="/all-orders/:id" element={<OrderDetail />} />
               <Route path="/services" element={<Services />} />
               <Route path="/services/:id" element={<ServiceDetail />} />
+              <Route path="/all-companies" element={<AllCompanies />} />
+              <Route path="/companies/addfirm" element={<AddFirm />} />
             </Route>
           </Routes>
         </Suspense>

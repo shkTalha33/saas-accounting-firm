@@ -64,11 +64,11 @@ const SidebarMenu = ({ children, setToggled, toggled, setBroken }) => {
     {
       image: companies,
       items: "Companies/Firms",
-      path: "/companies",
+      path: null,
       subItems: [
         {
           label: "All Companies",
-          path: "/sub/all-companies",
+          path: "/all-companies",
         },
         {
           label: "Companies and Subscriptions",
@@ -88,7 +88,7 @@ const SidebarMenu = ({ children, setToggled, toggled, setBroken }) => {
     {
       image: staff,
       items: "Staff Management",
-      path: "/staff",
+      path: null,
       subItems: [
         {
           label: "Staff",
@@ -154,7 +154,7 @@ const SidebarMenu = ({ children, setToggled, toggled, setBroken }) => {
                   paddingTop: "1rem",
                 }}
               >
-                <div className="flex items-center mb-3 justify-center">
+                <div className="flex items-center justify-center">
                   <button
                     onClick={() => {
                       navigate("/dashboard");
@@ -164,11 +164,11 @@ const SidebarMenu = ({ children, setToggled, toggled, setBroken }) => {
                     <img
                       src={valixLogoWhite}
                       alt="valix Logo White"
-                      width={"150px"}
+                      width={"120px"}
                     />
                   </button>
                 </div>
-                <Menu className="container mx-auto flex flex-col justify-between h-full mt-4 ">
+                <Menu className="container mx-auto flex flex-col bg_dark justify-between h-full mt-4 ">
                   <div>
                     <p
                       style={{ width: "90%", margin: "auto", fontSize: "17px" }}
@@ -181,17 +181,27 @@ const SidebarMenu = ({ children, setToggled, toggled, setBroken }) => {
                         {item.subItems ? (
                           <SubMenu
                             label={item.items}
-                            icon={<img src={item.image} width="22px" alt={item.items} />}
-                            className={`w-full archivo_bold text_white mb-2`}
-                          >{item.subItems.map((subItem, j) => (<MenuItem
-                                style={{backgroundColor:"bg_dark"}}
+                            icon={
+                              <img
+                                src={item.image}
+                                width="22px"
+                                alt={item.items}
+                              />
+                            }
+                            className={`w-full bg_dark text_white mb-2`}
+                          >
+                            {item.subItems.map((subItem, j) => (
+                              <MenuItem
+                                
                                 key={`${i}-${j}`}
                                 onClick={() =>
                                   handleLinkClick(`${i}-${j}`, subItem.path)
                                 }
                                 component={<Link to={subItem.path} />}
-                                className={`w-full bg_dark archivo_regular text_white  ${
+                                className={`w-full archivo_regular dashboard-submenu-items text_white  mb-2  rounded-lg ${
                                   isChildPath(subItem.path, location.pathname)
+                                    ? "bg_primary bg-red-600 text_white archivo_semibold"
+                                    : "text_white"
                                 }`}
                               >
                                 {subItem.label}
@@ -208,7 +218,7 @@ const SidebarMenu = ({ children, setToggled, toggled, setBroken }) => {
                             component={<Link to={item.path} />}
                             className={` mb-2 dashboard-menu-items rounded-lg  ${
                               isChildPath(item.path, location.pathname)
-                                ? "bg_primary text_white archivo_bold"
+                                ? "bg_primary text_white archivo_semibold"
                                 : "text_white"
                             }`}
                           >

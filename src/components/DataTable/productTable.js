@@ -28,82 +28,86 @@ import {
 } from "../icons/icon";
 import { MdSearch } from "react-icons/md";
 import { CircularProgress } from "@mui/material";
+import CustomButton from "../dashboard/CustomButton";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import { Button } from "antd";
 
-// const BootstrapCheckbox = forwardRef((props, ref) => (
-//     <div className='form-check'>
-//         <Input type='checkbox' ref={ref} {...props} />
-//     </div>
-// ))
+const BootstrapCheckbox = forwardRef((props, ref) => (
+    <div className='form-check'>
+        <Input type='checkbox' ref={ref} {...props} />
+    </div>
+))
+
 
 const ProductTable = ({
-  data,
-  columns,
-  currentPage,
+  data, //  data
+  columns, // coulumns
+  currentPage, // 0
   showFilter,
-  showRow,
-  rowHeading,
-  setCurrentPage,
-  setLastId,
-  count,
-  setSearch,
+  // showRow, // undefines
+  // rowHeading, // undefines
+  setCurrentPage, //
+  setPageNumber,
+  count, //ok
+  // setSearch,
   loading,
 }) => {
+  // debugger;
   const [modal, setModal] = useState(false);
   // const [currentPage, setCurrentPage] = useState(0)
   const [searchValue, setSearchValue] = useState("");
   const [filteredData, setFilteredData] = useState([]);
 
   // ** Function to handle Modal toggle
-  const handleModal = () => setModal(!modal);
+  // const handleModal = () => setModal(!modal);
 
   // ** Function to handle filter
-  const handleFilter = (e) => {
-    const value = e.target.value;
-    let updatedData = [];
-    setSearchValue(value);
+  // const handleFilter = (e) => {
+  //   const value = e.target.value;
+  //   let updatedData = [];
+  //   setSearchValue(value);
 
-    if (value.length) {
-      updatedData = data.filter((item) => {
-        const startsWith =
-          item.full_name.toLowerCase().startsWith(value.toLowerCase()) ||
-          item.post.toLowerCase().startsWith(value.toLowerCase()) ||
-          item.email.toLowerCase().startsWith(value.toLowerCase()) ||
-          item.age.toLowerCase().startsWith(value.toLowerCase()) ||
-          item.salary.toLowerCase().startsWith(value.toLowerCase()) ||
-          item.start_date.toLowerCase().startsWith(value.toLowerCase());
+  //   if (value.length) {
+  //     updatedData = data.filter((item) => {
+  //       const startsWith =
+  //         item.full_name.toLowerCase().startsWith(value.toLowerCase()) ||
+  //         item.post.toLowerCase().startsWith(value.toLowerCase()) ||
+  //         item.email.toLowerCase().startsWith(value.toLowerCase()) ||
+  //         item.age.toLowerCase().startsWith(value.toLowerCase()) ||
+  //         item.salary.toLowerCase().startsWith(value.toLowerCase()) ||
+  //         item.start_date.toLowerCase().startsWith(value.toLowerCase());
 
-        const includes =
-          item.full_name.toLowerCase().includes(value.toLowerCase()) ||
-          item.post.toLowerCase().includes(value.toLowerCase()) ||
-          item.email.toLowerCase().includes(value.toLowerCase()) ||
-          item.age.toLowerCase().includes(value.toLowerCase()) ||
-          item.salary.toLowerCase().includes(value.toLowerCase()) ||
-          item.start_date.toLowerCase().includes(value.toLowerCase());
+  //       const includes =
+  //         item.full_name.toLowerCase().includes(value.toLowerCase()) ||
+  //         item.post.toLowerCase().includes(value.toLowerCase()) ||
+  //         item.email.toLowerCase().includes(value.toLowerCase()) ||
+  //         item.age.toLowerCase().includes(value.toLowerCase()) ||
+  //         item.salary.toLowerCase().includes(value.toLowerCase()) ||
+  //         item.start_date.toLowerCase().includes(value.toLowerCase());
 
-        if (startsWith) {
-          return startsWith;
-        } else if (!startsWith && includes) {
-          return includes;
-        } else return null;
-      });
-      setFilteredData(updatedData);
-      setSearchValue(value);
-    }
-  };
+  //       if (startsWith) {
+  //         return startsWith;
+  //       } else if (!startsWith && includes) {
+  //         return includes;
+  //       } else return null;
+  //     });
+  //     setFilteredData(updatedData);
+  //     setSearchValue(value);
+  //   }
+  // };
 
   // ** Function to handle Pagination
   const handlePagination = (page) => {
+    console.log(page)
     setCurrentPage(page.selected);
-    setLastId(page.selected + 1);
+    setPageNumber(page.selected + 1);
   };
 
   // ** Pagination Previous Component
   const Previous = () => {
     return (
       <Fragment>
-        <span>
-          <img src={arrowleft2} alt="" />
-        </span>
+           <Button className='flex justify-between items-center' type='default'> <FaArrowLeft /> <span className="ml-2">Previous</span> </Button>
       </Fragment>
     );
   };
@@ -112,9 +116,7 @@ const ProductTable = ({
   const Next = () => {
     return (
       <Fragment>
-        <span>
-          <img src={arrowright2} alt="" />
-        </span>
+        <Button className='flex justify-between items-center' type='default'>  <span className="mr-2">Next</span> <FaArrowRight /></Button>
       </Fragment>
     );
   };
@@ -138,15 +140,36 @@ const ProductTable = ({
       previousLinkClassName="page-link"
       nextClassName="page-item next-item"
       previousClassName="page-item prev-item"
-      containerClassName="pagination react-paginate separated-pagination pagination-sm pe-4 justify-end mt-4"
+      containerClassName="pagination react-paginate separated-pagination pagination-sm justify-between mt-4"
     />
+    // <ReactPaginate
+    //   previousLabel={<Previous size={15} />}         // Previous button
+    //   nextLabel={<Next size={15} />}                 // Next button
+    //   forcePage={currentPage}                        // Force current page to stay in sync
+    //   onPageChange={(page) => handlePagination(page)}
+    //   pageCount={count}                              // Total pages
+    //   breakLabel="..."                               // Ellipsis between page ranges
+    //   pageRangeDisplayed={2}                         // Pages around current page
+    //   marginPagesDisplayed={2}                       // Pages at the start and end
+    //   activeClassName="active"                       // Active page styling
+    //   pageClassName="page-item"                      // Page item styling
+    //   breakClassName="page-item"                     // Ellipsis styling
+    //   nextLinkClassName="page-link"                  // Next link styling
+    //   pageLinkClassName="page-link"                  // Page link styling
+    //   breakLinkClassName="page-link"                 // Break/ellipsis link styling
+    //   previousLinkClassName="page-link"              // Previous link styling
+    //   nextClassName="page-item next-item"            // Next item styling
+    //   previousClassName="page-item prev-item"        // Previous item styling
+    //   containerClassName="pagination react-paginate separated-pagination pagination-sm pe-4 justify-end mt-4"
+    // />
+
   );
 
   return (
     <>
       <Fragment>
-        <Card className="border border-white w-full">
-          {showRow && (
+        <Card className="border rounded-lg border-white px-4 w-full">
+          {/* {showRow && (
             <div className="flex items-center justify-between flex-wrap p-3 max-md:gap-3 w-full">
               <div className="">
                 <h6 className="plusJakara_semibold text-[#6C7278]">
@@ -166,14 +189,14 @@ const ProductTable = ({
                     placeholder="Search anything here"
                     id="search-input-1"
                     value={searchValue}
-                    onChange={handleFilter}
+                    // onChange={handleFilter}
                   />
                 </div>
                 {showFilter && (
                   <div>
                     <button className="flex items-center gap-2 border rounded-lg py-[8px] px-[14px]">
                       <img src={filter} alt="" />
-                      <span className="plusJakara_semibold text_black text-sm">
+                      <span className="inter_regular text_black text-sm">
                         Filter
                       </span>
                     </button>
@@ -181,7 +204,7 @@ const ProductTable = ({
                 )}
               </div>
             </div>
-          )}
+          )} */}
           {loading ? (
             <div
               className="py-5"
